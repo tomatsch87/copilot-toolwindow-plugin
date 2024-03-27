@@ -47,8 +47,5 @@ As of January 2024, the plugin is no longer maintained by me.
 - https://plugins.jetbrains.com/docs/intellij/developing-plugins.html
 - https://github.com/JetBrains/intellij-sdk-docs/tree/main/code_samples
 - https://developerlife.com/2020/11/21/idea-plugin-example-intro/
-- https://www.youtube.com/watch?v=IeqRswA9VP8
 - https://www.baeldung.com/intellij-new-custom-plugin
-- https://www.youtube.com/watch?v=F9UC9DY-vIU
-- https://www.youtube.com/watch?v=cAwH_DbFrfw
 - https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html#configuration-intellij-extension
