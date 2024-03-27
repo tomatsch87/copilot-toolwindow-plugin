@@ -5,6 +5,13 @@
 Integrate any AI pair-programming API available on your local network into your Jetbrains IDEs.<br>
 The plugin provides a tool window that can be accessed through the toolbar.<br>
 It also provides a settings page that can be accessed through the settings menu or the toolbar.<br>
+These settings include connection settings (host/port) and authentication settings (user/password) for the API.<br>
+
+The plugin provides several actions:<br>
+  * Searching for completions based on the active file and cursor position
+  * Providing text feedback on the request
+  * Providing feedback on the results using a simple star rating
+  * Additionally there are some filter methods provided, which may be used in the request to the API
 You may need to adapt the plugin to your specific API.<br>
 
 ![toolwindow_screenshot](src/main/resources/toolwindow.png)
