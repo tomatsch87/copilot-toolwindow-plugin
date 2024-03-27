@@ -12,6 +12,7 @@ The plugin provides several actions:<br>
   * Providing text feedback on the request
   * Providing feedback on the results using a simple star rating
   * Additionally there are some filter methods provided, which may be used in the request to the API
+
 You may need to adapt the plugin to your specific API.<br>
 
 ![toolwindow_screenshot](src/main/resources/toolwindow.png)
