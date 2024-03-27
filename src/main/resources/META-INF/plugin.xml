@@ -1,0 +1,69 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>io.github.tomatsch87</id>
+    <name>Copilot Toolwindow</name>
+
+    <!-- Text to display as description on Preferences/Settings | Plugin page -->
+    <description>
+        <![CDATA[
+        Integrate any AI pair-programming API available on your local network into your IDE.<br>
+        The plugin provides a tool window that can be accessed through the toolbar.<br>
+        It also provides a settings page that can be accessed through the settings menu or the toolbar.<br>
+        You may need to adapt the plugin to your specific API.<br>
+    ]]>
+    </description>
+
+    <change-notes>
+        <![CDATA[
+        <ul>
+            <li><b>0.0.5</b> Introduced star rating for results</li>
+            <li><b>0.0.4</b> Minor improvements and bug fixes</li>
+            <li><b>0.0.3</b> Added feedback options, folding regions and user authentication</li>
+            <li><b>0.0.2</b> Added a Tool Window anchored on the right side of your IDE</li>
+            <li><b>0.0.1</b> Initial release of the plugin</li>
+        </ul>
+    ]]>
+    </change-notes>
+
+    <vendor url="https://github.com/tomatsch87/">tomatsch87</vendor>
+    <version>0.0.5</version>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Register a tool window and anchor it to the right side of the IDE -->
+        <toolWindow factoryClass="io.github.tomatsch87.ui.CopilotToolWindowFactory"
+                    id="Copilot Toolwindow"
+                    anchor="right"
+                    secondary="false"
+                    icon="/icons/ic_robot2.png"/>
+        <!-- Register a startup activity to initialize the plugin -->
+        <postStartupActivity
+                implementation="io.github.tomatsch87.services.StartupToolWindow"
+                id="Copliot Toolwindow init"/>
+
+        <!-- Register the plugin settings service to Intellij-Settings -->
+        <applicationConfigurable
+                parentId="tools"
+                instance="io.github.tomatsch87.ui.SettingsConfigurable"
+                id="io.github.tomatsch87.ui.SettingsConfigurable"
+                displayName="Copilot Toolwindow Settings"/>
+        <!-- Register an application-level service to store and retrieve persistent plugin settings -->
+        <applicationService serviceImplementation="io.github.tomatsch87.services.PluginSettings" />
+    </extensions>
+
+    <actions>
+        <!-- Define a new action group for all Toolbar-Actions. -->
+        <group id="io.github.tomatsch87.ToolbarGroup" text="CopilotToolwindow">
+            <!-- Add the group to the main menu. -->
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <!-- Define a new action and associate it with the class "actions.SettingsAction". -->
+            <action id="io.github.tomatsch87.SettingsAction"
+                    description="With Copilot Toolwindow you can search for existing solutions."
+                    icon="AllIcons.Actions.InlayGear"
+                    class="io.github.tomatsch87.actions.SettingsAction"
+                    text="Settings" />
+        </group>
+    </actions>
+</idea-plugin>
