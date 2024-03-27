@@ -2,7 +2,7 @@
 
 ## Plugin Description
 
-Integrate any AI pair-programming API available on your local network into your IDE.<br>
+Integrate any AI pair-programming API available on your local network into your Jetbrains IDEs.<br>
 The plugin provides a tool window that can be accessed through the toolbar.<br>
 It also provides a settings page that can be accessed through the settings menu or the toolbar.<br>
 You may need to adapt the plugin to your specific API.<br>
